@@ -112,7 +112,7 @@ void insertar1(string nueva_palabra) {
 }
 
 int main(){
-    ifstream archivo("D1.txt"); 
+    ifstream archivo("D1.txt"); //dependiendo de que diccionario se busque
     string palabra;
 
     if (!archivo.is_open()) {
@@ -120,7 +120,7 @@ int main(){
         return 1; 
     }
 
-    cout << "--- CARGANDO DICCIONARIO ---" << endl;
+    cout << "CARGANDO DICCIONARIO" << endl;
     
     auto inicio_carga = high_resolution_clock::now();
     
@@ -132,7 +132,7 @@ int main(){
     auto duracion_carga = duration_cast<milliseconds>(fin_carga - inicio_carga);
     archivo.close(); 
 
-    cout << "Total de palabras insertadas: " << cantidad_actual << endl;
+    cout << "Total de palabras: " << cantidad_actual << endl;
     cout << "Tiempo total de insercion: " << duracion_carga.count() << " ms" << endl;
     
     size_t ram_bytes = CalcularMemoriaRAM();
