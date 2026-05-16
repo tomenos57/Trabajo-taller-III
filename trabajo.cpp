@@ -139,8 +139,9 @@ int main(){
     cout << "Espacio estimado en RAM: " << ram_bytes << " bytes (" << ram_bytes / 1024.0 << " KB)" << endl;
     cout << "----------------------------\n" << endl;
 
-    string palabra_a_buscar = "universidad"; 
-    cout << "Buscando la palabra: '" << palabra_a_buscar << "'" << endl;
+    string palabra_a_buscar; 
+    cout << "Ingrese la palabra a buscar: ";
+    cin >> palabra_a_buscar;
 
     auto inicio_busqueda = high_resolution_clock::now();
     
@@ -150,7 +151,7 @@ int main(){
     auto duracion_busqueda = duration_cast<microseconds>(fin_busqueda - inicio_busqueda);
 
     if (pos != -1) {
-        cout << "Resultado: Encontrada en el indice [" << pos << "]" << endl;
+        cout << "Resultado: Encontrada en el indice [" << pos+1 << "]" << endl;
     } else {
         cout << "Resultado: No existe en el diccionario." << endl;
     }
