@@ -81,7 +81,14 @@ int Buscar1(string palabra_buscada) {
 
 void insertar1(string nueva_palabra) {
     if (cantidad_actual == capacidad_maxima) {
-        capacidad_maxima = capacidad_maxima * (1 + porcentaje_overhead);
+   
+        int nueva_capacidad = capacidad_maxima * (1 + porcentaje_overhead);
+        
+        if (nueva_capacidad == capacidad_maxima) {
+            nueva_capacidad++; 
+        }
+        
+        capacidad_maxima = nueva_capacidad;
         string* nuevo_v = new string[capacidad_maxima];
 
         for (int i = 0; i < cantidad_actual; i++) {
