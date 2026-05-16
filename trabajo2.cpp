@@ -167,8 +167,9 @@ int main() {
     cout << "Espacio estimado en RAM: " << ram_bytes << " bytes (" << ram_bytes / 1024.0 / 1024.0 << " MB)" << endl;
     cout << "----------------------------\n" << endl;
 
-    string palabra_a_buscar = "universidad"; 
-    cout << "Buscando la palabra: '" << palabra_a_buscar << "'" << endl;
+    string palabra_a_buscar; 
+    cout << "Ingrese la palabra a buscar: ";
+    cin >> palabra_a_buscar;
 
     auto inicio_busqueda = high_resolution_clock::now();
     
